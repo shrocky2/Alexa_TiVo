@@ -208,8 +208,7 @@ class device_handler(debounce_handler):
         print " "
 
     def act(self, client_address, state, name):
-        print "State", state, "on", name, "from client @", client_address, "
-         port:",gpio_ports[str(name)]
+        print "State", state, "on", name, "from client @", client_address, "port:",gpio_ports[str(name)]
         self.trigger(gpio_ports[str(name)],state)
         return True
 
