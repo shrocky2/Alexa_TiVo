@@ -134,7 +134,7 @@ class device_handler(debounce_handler):
                         print "Telnet Error, Check TiVo IP Address"
         
         if port == 25: #Hulu
-            
+                print "Hulu Code Needed"
         if port == 26: #YouTube
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
@@ -158,9 +158,9 @@ class device_handler(debounce_handler):
                 except:
                         print "Telnet Error, Check TiVo IP Address"
         
-                
+        print " "        
       else:
-        if port == 24 or 25 or 26: #Netflix or YoutTube turn OFF
+        if port == 24: #Netflix or YoutTube turn OFF
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
                         tn.write("IRCODE LIVETV\r")
