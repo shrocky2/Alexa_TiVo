@@ -40,7 +40,7 @@ class device_handler(debounce_handler):
                 "YouTube":50026}
 
     def trigger(self,port,state):
-      TiVo_IP_Address = "192.168.0.47”
+      TiVo_IP_Address = "192.168.0.47"
       print 'port:',  port,  "   state:", state
       if state == True:
         #Find what port was triggered, change the channel accordingly
