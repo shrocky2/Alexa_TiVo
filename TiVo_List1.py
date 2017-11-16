@@ -7,18 +7,13 @@
 import fauxmo
 import logging
 import time
-#Telnet Added Information
-import getpass
-import sys
-import telnetlib
-#End Telnet Added Information
 
 from debounce_handler import debounce_handler
 
 logging.basicConfig(level=logging.DEBUG)
 
 print " Control+C to exit program"
-gpio_ports = {'The CW':1,'A and E':2,'Cartoon Network':3,'FX':4,'History Channel':5,'T.L.C.':6,'T.N.T.':7,'TV Land':8,'USA':9,'VH1':10,'WGN':11,'Travel Channel':12}
+gpio_ports = {'The CW':1,'A and E':2,'Cartoon Network':3,'FX':4,'History Channel':5,'T.L.C.':6,'T.N.T.':7,'TV Land':8,'USA':9,'VH One':10,'WGN':11,'Travel Channel':12}
 
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
@@ -34,7 +29,7 @@ class device_handler(debounce_handler):
                 "T.N.T.":50007,
                 "TV Land":50008,
                 "USA":50009,
-                "VH1":50010,
+                "VH One":50010,
                 "WGN":50011,
                 "Travel Channel":50012}
 
@@ -42,9 +37,9 @@ class device_handler(debounce_handler):
       TiVo_IP_Address = "192.168.0.47"
       print 'port:',  port,  "   state:", state
       if state == True:
-        
+        print ""
       else:
-        
+        print ""
 
     def act(self, client_address, state, name):
         print "State", state, "on", name, "from client @", client_address, "gpio port:",gpio_ports[str(name)]
@@ -74,4 +69,4 @@ if __name__ == "__main__":
             time.sleep(0.1)
         except Exception, e:
             logging.critical("Critical exception: " + str(e))
-break
+            break
