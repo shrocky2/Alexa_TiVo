@@ -11,7 +11,7 @@ Steps Required:
 
 4: Have Alexa discover new devices (so it learns what channels are programmed)
 
-5: Setup pi to autostart programs everytime pi boots up
+5: Setup your Pi to start our program everytime the pi boots up
 
 Step 1: TiVo Setup (TiVo HD Instructions).
 ----------------------------------------------------------------------------------
