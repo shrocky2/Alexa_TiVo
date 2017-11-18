@@ -19,25 +19,48 @@ from debounce_handler import debounce_handler
 logging.basicConfig(level=logging.DEBUG)
 
 print " Control+C to exit program"
-gpio_ports = {'TiVo Pause':1,'A.B.C.':786,'N.B.C.':782,'C.B.S.':784,'Fox':5,'Comedy Central':754,'T.B.S.':767,'HGTV':8,'ESPN':9,'Netflix':10,'Hulu':11,'YouTube':12,'The CW':13,'A and E':14,'Cartoon Network':15,'FX':16,'History Channel':17,'T.L.C.':18,'T.N.T.':19,'TV Land':20,'USA':21,'VH One':22,'WGN':23,'Travel Channel':24}
+gpio_ports = {'TiVo Pause':10000,
+              'Netflix':10001,
+              'Hulu':10002,
+              'YouTube':10003,
+              'A.B.C.':786,
+              'N.B.C.':782,
+              'C.B.S.':784,
+              'Fox':788,
+              'Comedy Central':754,
+              'T.B.S.':767,
+              'HGTV':762,
+              'ESPN':800,
+              'The CW':787,
+              'A and E':795,
+              'Cartoon Network':872,
+              'FX':753,
+              'History Channel':796,
+              'T.L.C.':764,
+              'T.N.T.':797,
+              'TV Land':731,
+              'USA':757,
+              'VH One':871,
+              'WGN':778,
+              'Travel Channel':758}
+
 
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
        Publishes the IP address of the Echo making the request.
     """
-
     TRIGGERS = {"TiVo Pause":50001,
-                "A.B.C.":50002,
-                "N.B.C.":50003,
-                "C.B.S.":50004,
-                "Fox":50005,
-                "Comedy Central":50006,
-                "T.B.S.":50007,
-                "HGTV":50008,
-                "ESPN":50009,
-                "Netflix":50010,
-                "Hulu":50011,
-                "YouTube":50012,
+                "Netflix":50002,
+                "Hulu":50003,
+                "YouTube":50004,
+                "A.B.C.":50005,
+                "N.B.C.":50006,
+                "C.B.S.":50007,
+                "Fox":50008,
+                "Comedy Central":50009,
+                "T.B.S.":50010,
+                "HGTV":50011,
+                "ESPN":50012,
                 "The CW":50013,
                 "A and E":50014,
                 "Cartoon Network":50015,
@@ -54,75 +77,78 @@ class device_handler(debounce_handler):
     def trigger(self,port,state):
       TiVo_IP_Address = "192.168.0.47"
       print 'port:',  port,  "   state:", state
-      if state == True:
-        #Find what port was triggered, change the channel accordingly
-         try:
-             tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-             tn.write("IRCODE PAUSE\r")
-             tn.close()
-             print "Channel Changed to " port
-          except:
-             print "Telnet Error, Check TiVo IP Address"
-        if port == 1: #TiVo Paused
+      if state == True: #If the ON command is given, it will run this code
+        if port < 10000: #Numbers Less Than 10000 are channels, numbers above 10000 are Services like Netflix
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("IRCODE PAUSE\r")
+                        tn.write('SETCH '+str(port)+'\r')
                         tn.close()
-                        print "TiVo Paused"
+                        print "Channel Changed to ", port
                 except:
                         print "Telnet Error, Check TiVo IP Address"
+        else:
+                if port == 10000: #TiVo Paused
+                        try:
+                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+                         tn.write("IRCODE PAUSE\r")
+                         tn.close()
+                         print "TiVo Paused"
+                        except:
+                         print "Telnet Error, Check TiVo IP Address"
+
                           
-        if port == 10: #Netflix
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("IRCODE TIVO\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE RIGHT\r")
-                        time.sleep(1)
-                        tn.write("IRCODE SELECT\r")
-                        tn.close()
-                        print "TiVo App Netflix is Starting"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        
-        if port == 11: #Hulu
-                print "Hulu Code Needed"
-        if port == 12: #YouTube
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("IRCODE TIVO\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(1)
-                        tn.write("IRCODE RIGHT\r")
-                        time.sleep(1)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE DOWN\r")
-                        time.sleep(.4)
-                        tn.write("IRCODE SELECT\r")
-                        tn.close()
-                        print "TiVo App YouTube is Starting"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"     
-      else:
-        if port == 10 or port == 12: #Netflix or YoutTube turn OFF
+                if port == 10001: #Netflix
+                        try:
+                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+                         tn.write("IRCODE TIVO\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE RIGHT\r")
+                         time.sleep(1)
+                         tn.write("IRCODE SELECT\r")
+                         tn.close()
+                         print "TiVo App Netflix is Starting"
+                        except:
+                         print "Telnet Error, Check TiVo IP Address"
+
+                if port == 10002: #Hulu
+                        print "Hulu Code Needed"
+                if port == 10003: #YouTube
+                        try:
+                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+                         tn.write("IRCODE TIVO\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(1)
+                         tn.write("IRCODE RIGHT\r")
+                         time.sleep(1)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE DOWN\r")
+                         time.sleep(.4)
+                         tn.write("IRCODE SELECT\r")
+                         tn.close()
+                         print "TiVo App YouTube is Starting"
+                        except:
+                         print "Telnet Error, Check TiVo IP Address"
+      else: #If the OFF command is given, it will run this code
+        if port == 10001 or port == 10002 or port == 10003: #Netflix, Hulu, or YoutTube OFF command is given
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
                         tn.write("IRCODE LIVETV\r")
                         tn.close()
-                        print "TiVo LiveTv Pressed"
+                        print "TiVo LiveTv Button Pressed"
                 except:
                         print "Telnet Error, Check TiVo IP Address"
         print " "
+
 
     def act(self, client_address, state, name):
         print "State", state, "on", name, "from client @", client_address, "port:",gpio_ports[str(name)]
