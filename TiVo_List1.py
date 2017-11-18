@@ -13,25 +13,37 @@ from debounce_handler import debounce_handler
 logging.basicConfig(level=logging.DEBUG)
 
 print " Control+C to exit program"
-gpio_ports = {'The CW':13,'A and E':14,'Cartoon Network':15,'FX':16,'History Channel':17,'T.L.C.':18,'T.N.T.':19,'TV Land':20,'USA':21,'VH One':22,'WGN':23,'Travel Channel':24}
+gpio_ports = {'TiVo Pause':10000,
+              'Netflix':10001,
+              'Hulu':10002,
+              'YouTube':10003,
+              'A.B.C.':786,
+              'N.B.C.':782,
+              'C.B.S.':784,
+              'Fox':788,
+              'Comedy Central':754,
+              'T.B.S.':767,
+              'HGTV':762,
+              'ESPN':800}
 
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
        Publishes the IP address of the Echo making the request.
     """
 
-    TRIGGERS = {"The CW":50013,
-                "A and E":50014,
-                "Cartoon Network":50015,
-                "FX":50016,
-                "History Channel":50017,
-                "T.L.C.":50018,
-                "T.N.T.":50019,
-                "TV Land":50020,
-                "USA":50021,
-                "VH One":50022,
-                "WGN":50023,
-                "Travel Channel":50024}
+    TRIGGERS = {"TiVo Pause":50001,
+                "Netflix":50002,
+                "Hulu":50003,
+                "YouTube":50004,
+                "A.B.C.":50005,
+                "N.B.C.":50006,
+                "C.B.S.":50007,
+                "Fox":50008,
+                "Comedy Central":50009,
+                "T.B.S.":50010,
+                "HGTV":50011,
+                "ESPN":50012,
+                "The CW":50013,}
 
     def trigger(self,port,state):
       TiVo_IP_Address = "192.168.0.47"
