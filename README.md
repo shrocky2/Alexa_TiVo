@@ -12,13 +12,19 @@ Steps Required:
 
 Step 1: TiVo Setup (TiVo HD Instructions).
 ----------------------------------------------------------------------------------
--Hit your TiVo Remote button and go to Messages & Settings
--Choose Settings
--Choose Remote, CableCard, & Devices
--Choose Network Remote Control
--Choose Enable
--Press Thumbs Up, Thumbs Up, Thumbs Up
--Your TiVo can now be controlled via TelNet commands over port 31339
+Hit your TiVo Remote button and go to Messages & Settings
+
+Choose Settings
+
+Choose Remote, CableCard, & Devices
+
+Choose Network Remote Control
+
+Choose Enable
+
+Press Thumbs Up, Thumbs Up, Thumbs Up
+
+Your TiVo can now be controlled via TelNet commands over port 31339
 
 Step 1: Tivo Setup (TiVo Bolt Instructions)
 ----------------------------------------------------------------------------------
@@ -45,4 +51,6 @@ to edit a programs enter the following: sudo nano TiVo_List1.py
 Once you've edited TiVo_List1.py & TiVo_List2.py, we can move onto editing TiVo.py
 Any Changes you made to TiVo_List1.py & TiVo_List2.py need to be copied into TiVo.py
 TiVo.py is the real code that is used to actually change the TiVo Channels, 
+
 ----------------------------------------------------------------------------------
+sudo nano /etc/rc.local
