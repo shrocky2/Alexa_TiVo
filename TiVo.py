@@ -19,6 +19,9 @@ from debounce_handler import debounce_handler
 logging.basicConfig(level=logging.DEBUG)
 
 print " Control+C to exit program"
+#Edit this section to personalize your TV Channels. The channel number is listed after each station.
+#----------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------
 gpio_ports = {'TiVo Pause':10000,
               'Netflix':10001,
               'Hulu':10002,
@@ -43,6 +46,9 @@ gpio_ports = {'TiVo Pause':10000,
               'VH One':871,
               'WGN':778,
               'Travel Channel':758}
+#----------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------
+
 
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
