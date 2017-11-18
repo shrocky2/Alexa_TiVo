@@ -1,7 +1,5 @@
 # Alexa_TiVo_Control
-Control your TiVo using an Amazon Echo &amp; a Raspberry Pi
-
-Controlling you TiVo using an Amazon Echo & a Raspberry Pi is pretty easy to set up using this code.
+Controlling your TiVo using an Amazon Echo & a Raspberry Pi is pretty easy to set up using this code.
 
 Steps Required:
 ----------------------------------------------------------------------------------
@@ -72,14 +70,14 @@ Any Changes you made to tivo_list1.py & tivo_list2.py need to be copied into TiV
 
 TiVo.py is the real code that is used to actually change the TiVo Channels
 
-Step 4: Have Alexa discover new devices (so it learns what channels are programmed)
+Step 4: Have Alexa discover new devices
 ----------------------------------------------------------------------------------
 
 
 
 
 
-Step 5: Setup pi to autostart programs everytime pi boots up
+Step 5: Setup your pi to start our program everytime the pi boots up
 ----------------------------------------------------------------------------------
 type: sudo nano /etc/rc.local
 
