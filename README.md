@@ -86,11 +86,11 @@ Step 3.5: Program Code to Perform Remote Control Actions
 ----------------------------------------------------------------------------------
 In the TiVo.py code, you will see how you can program your TiVo to start Netflix or YouTube by programming remote control actions.
 
-you will see code that says "IRCODE TIVO\r" or "IRCODE DOWN\r" or "IRCODE RIGHT\r", These are remoter commands
+You will see code that says "IRCODE TIVO\r" or "IRCODE DOWN\r" or "IRCODE RIGHT\r", These are remote commands
 
-the code that says "time.sleep(.4)" tells our Raspberry Pi to pause before it sends the next command
+The code that says "time.sleep(.4)" tells our Raspberry Pi to pause before it sends the next command
 
-If you send code to fast, the TiVo is too slow to keep up. (The ".4" is the number of seconds to pause, but you can change that to any number of seconds you wish)
+If you send code to fast, the TiVo is too slow to keep up. (The ".4" tells the tivo to pause for 4/10th of a second, but you can change that to any number of seconds you wish)
 
 You can learn about TiVo commands at:
 
