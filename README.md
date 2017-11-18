@@ -35,10 +35,16 @@ Your TiVo can now be controlled via TelNet commands over port 31339
 
 Step 1: Tivo Setup (TiVo Bolt Instructions)
 ----------------------------------------------------------------------------------
+Hit your TiVo Remote button and go to Messages & Settings
+
+Choose Remote, CableCard, & Devices
+
+Choose Network Remote Control
+
+Choose Allow Network-based remote controls
 
 Step 2: Download Code
 ----------------------------------------------------------------------------------
-
 First verify that your Raspberry Pi is running Python. (This programming language is required to run our code.)
 
 On your pi, type: python 
@@ -134,3 +140,6 @@ Make sure you add the ampersand (&) at the end of that line. This symbol tells o
 Finally we can reboot the system, type the following:
 
 sudo reboot
+
+The End, Enjoy your Alexa Controlled TiVo
+----------------------------------------------------------------------------------
