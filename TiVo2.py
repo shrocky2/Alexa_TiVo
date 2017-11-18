@@ -44,7 +44,6 @@ gpio_ports = {'TiVo Pause':10000,
               'WGN':778,
               'Travel Channel':758}
 
-
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
        Publishes the IP address of the Echo making the request.
@@ -86,6 +85,7 @@ class device_handler(debounce_handler):
                         print "Channel Changed to ", port
                 except:
                         print "Telnet Error, Check TiVo IP Address"
+                print " "
         else:
                 if port == 10000: #TiVo Paused
                         try:
@@ -138,6 +138,8 @@ class device_handler(debounce_handler):
                          print "TiVo App YouTube is Starting"
                         except:
                          print "Telnet Error, Check TiVo IP Address"
+                print " "
+               
       else: #If the OFF command is given, it will run this code
         if port == 10001 or port == 10002 or port == 10003: #Netflix, Hulu, or YoutTube OFF command is given
                 try:
