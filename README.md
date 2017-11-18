@@ -1,6 +1,10 @@
 # Alexa_TiVo_Control
 Controlling your TiVo using an Amazon Echo & a Raspberry Pi is pretty easy to set up using this code.
 
+This code runs on top of a program that is called Fauxmo, a program that emulates a Belkin WeMo device. The Belkin WeMo is a smart outlet, so our code turns our Raspberry Pi into a fake smart outlet, allowing us to turn ON or turn OFF any code we program.
+
+The program I created allows our Raspberry Pi to TelNet into our TiVo and change the channels, or preform remote control actions.
+
 Steps Required:
 ----------------------------------------------------------------------------------
 1: Setup your TiVo to allow it to be controlled via a network connection
@@ -77,6 +81,21 @@ Change the IP Address the address of your TiVo, I Suggest you give your TiVo a S
 Any Changes you made to tivo_list1.py & tivo_list2.py need to be copied into TiVo.py
 
 TiVo.py is the real code that is used to actually change the TiVo Channels
+
+Step 3.5: Program Code to Perform Remote Control Actions
+----------------------------------------------------------------------------------
+In the TiVo.py code, you will see how you can program your TiVo to start Netflix or YouTube by programming remote control actions.
+
+you will see code that says "IRCODE TIVO\r" or "IRCODE DOWN\r" or "IRCODE RIGHT\r", These are remoter commands
+
+the code that says "time.sleep(.4)" tells our Raspberry Pi to pause before it sends the next command
+
+If you send code to fast, the TiVo is too slow to keep up. (The ".4" is the number of seconds to pause, but you can change that to any number of seconds you wish)
+
+You can learn about TiVo commands at:
+
+https://www.tivocommunity.com/community/index.php?threads/tivo-ui-control-via-telnet-no-hacking-required.392385/
+
 
 Step 4: Have Alexa discover new devices
 ----------------------------------------------------------------------------------
