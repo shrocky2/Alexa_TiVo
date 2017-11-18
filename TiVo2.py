@@ -19,7 +19,7 @@ from debounce_handler import debounce_handler
 logging.basicConfig(level=logging.DEBUG)
 
 print " Control+C to exit program"
-gpio_ports = {'TiVo Pause':1,'A.B.C.':2,'N.B.C.':3,'C.B.S.':4,'Fox':5,'Comedy Central':6,'T.B.S.':7,'HGTV':8,'ESPN':9,'Netflix':10,'Hulu':11,'YouTube':12,'The CW':13,'A and E':14,'Cartoon Network':15,'FX':16,'History Channel':17,'T.L.C.':18,'T.N.T.':19,'TV Land':20,'USA':21,'VH One':22,'WGN':23,'Travel Channel':24}
+gpio_ports = {'TiVo Pause':1,'A.B.C.':786,'N.B.C.':782,'C.B.S.':784,'Fox':5,'Comedy Central':754,'T.B.S.':767,'HGTV':8,'ESPN':9,'Netflix':10,'Hulu':11,'YouTube':12,'The CW':13,'A and E':14,'Cartoon Network':15,'FX':16,'History Channel':17,'T.L.C.':18,'T.N.T.':19,'TV Land':20,'USA':21,'VH One':22,'WGN':23,'Travel Channel':24}
 
 class device_handler(debounce_handler):
     """Triggers on/off based on 'device' selected.
@@ -56,6 +56,13 @@ class device_handler(debounce_handler):
       print 'port:',  port,  "   state:", state
       if state == True:
         #Find what port was triggered, change the channel accordingly
+         try:
+             tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+             tn.write("IRCODE PAUSE\r")
+             tn.close()
+             print "Channel Changed to " port
+          except:
+             print "Telnet Error, Check TiVo IP Address"
         if port == 1: #TiVo Paused
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
@@ -64,70 +71,7 @@ class device_handler(debounce_handler):
                         print "TiVo Paused"
                 except:
                         print "Telnet Error, Check TiVo IP Address"
-        if port == 2: #ABC
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 786\r")
-                        tn.close()
-                        print "TiVo Channel Changed to ABC"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 3: #NBC
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 782\r")
-                        tn.close()
-                        print "TiVo Channel Changed to NBC"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 4: #CBS
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 784\r")
-                        tn.close()
-                        print "TiVo Channel Changed to CBS"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 5: #Fox
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 788\r")
-                        tn.close()
-                        print "TiVo Channel Changed to Fox"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 6: #Comedy Central
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 754\r")
-                        tn.close()
-                        print "TiVo Channel Changed to Comedy Central"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 7: #TBS
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 767\r")
-                        tn.close()
-                        print "TiVo Channel Changed to TBS"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 8: #HGTV
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 762\r")
-                        tn.close()
-                        print "TiVo Channel Changed to TBS"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"                     
-        if port == 9: #ESPN
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write("SETCH 800\r")
-                        tn.close()
-                        print "TiVo Channel Changed to TBS"
-                except:
-                        print "Telnet Error, Check TiVo IP Address"                     
+                          
         if port == 10: #Netflix
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
@@ -168,33 +112,7 @@ class device_handler(debounce_handler):
                         tn.close()
                         print "TiVo App YouTube is Starting"
                 except:
-                        print "Telnet Error, Check TiVo IP Address"
-        if port == 13: #The CW
-         print "The CW"
-        if port == 14: # A & E
-         print "A & E"
-        if port == 15: #Cartoon Network
-         print "Cartoon Network"
-        if port == 16: #FX
-         print "FX"
-        if port == 17: #History Channel
-         print "History Channel"
-        if port == 18: #TLC
-         print "T.L.C."
-        if port == 19: #TNT
-         print "T.N.T."
-        if port == 20: #TV Land
-         print "TV Land"
-        if port == 21: #USA
-         print "USA"
-        if port == 22: #VH1
-         print "VH1"
-        if port == 23: #WGN
-         print "WGN"
-        if port == 24: #Travel Channel
-         print "Travel Channel"
-        
-        print " "        
+                        print "Telnet Error, Check TiVo IP Address"     
       else:
         if port == 10 or port == 12: #Netflix or YoutTube turn OFF
                 try:
@@ -234,4 +152,4 @@ if __name__ == "__main__":
             time.sleep(0.1)
         except Exception, e:
             logging.critical("Critical exception: " + str(e))
-break
+            break
