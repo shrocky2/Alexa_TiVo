@@ -82,7 +82,7 @@ class device_handler(debounce_handler):
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
                         tn.write('SETCH '+str(port)+'\r')
                         tn.close()
-                        print "Channel Changed to ", port
+                        print "Channel Changed to", port
                 except:
                         print "Telnet Error, Check TiVo IP Address"
                 print " "
