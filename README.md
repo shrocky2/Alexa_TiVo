@@ -52,7 +52,7 @@ type: cd Alexa_TiVo
 There are 2 files that you DON'T need to modify, "fauxmo.py" & "debounce_handler.py", so just forget they exist.
 
 
-Step 3: Edit Code to match your channel situation
+Step 3: Edit Code to Match your Channel Situation
 ----------------------------------------------------------------------------------
 There are 3 .py files that you can edit to personalize the TV channels that Alexa can change on the TiVo.
 
@@ -60,11 +60,19 @@ tivo_list1.py & tivo_list2.py are used to teach Alexa the TV Channels
 
 These 2 files are needed because Alexa can only learn 12 new devices at a given time. (Alexa only searches for new 'devices' for 20 seconds, which is only enough time to learn 12 devices.) So if we run these 2 python programs seperately, we can teach Alexa 24 'devices')
 
-to edit a programs enter the following: sudo nano TiVo_List1.py 
+to edit a program enter the following: sudo nano tivo_list1.py
+
+Near the Top, you will see TV Stations followed by their Channel Number. Edit to your liking.
+
+Just below that section, you will see a similar section, only change the TV Stations to match the changes in the above section.
 
 (hit Control + X to Save Changes)
 
 Once you've edited tivo_list1.py & tivo_list2.py, we can move onto editing TiVo.py
+
+In the TiVo.py code, you need to find the line that says "TiVo_IP_Address"
+
+Change the IP Address the address of your TiVo, I Suggest you give your TiVo a Static IP Address (As well as your Raspberry Pi)
 
 Any Changes you made to tivo_list1.py & tivo_list2.py need to be copied into TiVo.py
 
@@ -72,10 +80,25 @@ TiVo.py is the real code that is used to actually change the TiVo Channels
 
 Step 4: Have Alexa discover new devices
 ----------------------------------------------------------------------------------
+Repeating what I said before, Alexa can only learn 12 new devices at a given time. (Alexa only searches for new 'devices' for 20 seconds, which is only enough time to learn 12 devices.) So if we run these 2 python programs seperately, we can teach Alexa 24 'devices')
 
+type: python tivo_list1.py
 
+Speak to Alexa, "Alexa discover devices"
 
+type: control + c (this will terminate the program)
 
+type: python tivo_list2.py
+
+Speak to Alexa, "Alexa discover devices"
+
+type: control + c (this will terminate the program)
+
+Alexa should have learned all 24 channels (she'll call them devices)
+
+type: python TiVo.py
+
+Test the program with Alexa...Just say "Alexa, turn on N.B.C." or "Alexa, turn Comedy Central on"
 
 Step 5: Setup your pi to start our program everytime the pi boots up
 ----------------------------------------------------------------------------------
