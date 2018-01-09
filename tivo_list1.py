@@ -42,8 +42,7 @@ class device_handler(debounce_handler):
                 "Comedy Central":50009,
                 "T.B.S.":50010,
                 "HGTV":50011,
-                "ESPN":50012,
-                "The CW":50013,}
+                "ESPN":50012}
 
     def trigger(self,port,state):
       TiVo_IP_Address = "192.168.0.47"
