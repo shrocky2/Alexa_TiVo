@@ -26,26 +26,26 @@ gpio_ports = {'TiVo Pause':10000,
               'Netflix':10001,
               'Hulu':10002,
               'YouTube':10003,
-              'A.B.C.':786,
-              'N.B.C.':782,
-              'C.B.S.':784,
-              'Fox':788,
-              'Comedy Central':754,
-              'T.B.S.':767,
-              'HGTV':762,
-              'ESPN':800,
-              'The CW':787,
-              'A and E':795,
-              'Cartoon Network':872,
-              'FX':753,
-              'History Channel':796,
-              'T.L.C.':764,
-              'T.N.T.':797,
-              'TV Land':731,
-              'USA':757,
-              'VH One':871,
-              'WGN':778,
-              'Travel Channel':758}
+              'A.B.C.':1,
+              'N.B.C.':2,
+              'C.B.S.':3,
+              'Fox':4,
+              'Comedy Central':5,
+              'T.B.S.':6,
+              'HGTV':7,
+              'ESPN':8,
+              'The CW':9,
+              'A and E':10,
+              'Cartoon Network':11,
+              'FX':12,
+              'History Channel':13,
+              'T.L.C.':14,
+              'T.N.T.':15,
+              'TV Land':16,
+              'USA':17,
+              'VH One':18,
+              'WGN':19,
+              'Travel Channel':20}
 #----------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------
 
@@ -119,6 +119,152 @@ class device_handler(debounce_handler):
               print "Channel Changed to Antenna Channel"
            except:
               print "Telnet Error, Check TiVo IP Address"
+        if port == 5: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 6: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 7: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 8: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 9: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 10: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 11: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 12: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 13: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 14: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 15: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 16: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 17: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 18: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 19: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 20: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+
+               
         if port == 10000: #TiVo Paused
            try:
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
@@ -127,8 +273,6 @@ class device_handler(debounce_handler):
               print "TiVo Paused"
            except:
               print "Telnet Error, Check TiVo IP Address"
-
-                          
         if port == 10001: #Netflix
            try:
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
@@ -145,7 +289,6 @@ class device_handler(debounce_handler):
               print "TiVo App Netflix is Starting"
            except:
               print "Telnet Error, Check TiVo IP Address"
-
         if port == 10002: #Hulu
               print "Hulu Code Needed"
         if port == 10003: #YouTube
