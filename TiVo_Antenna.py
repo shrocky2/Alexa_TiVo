@@ -85,7 +85,6 @@ class device_handler(debounce_handler):
       if state == True: #If the ON command is given, it will run this code
         if port == 1: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -94,7 +93,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 2: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -103,7 +101,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 3: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -112,7 +109,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 4: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -121,7 +117,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 5: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -130,7 +125,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 6: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -139,7 +133,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 7: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -148,7 +141,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 8: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -157,7 +149,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 9: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -166,7 +157,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 10: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -175,7 +165,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 11: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -193,7 +182,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 13: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -202,7 +190,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 14: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -211,7 +198,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 15: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -220,7 +206,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 16: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -229,7 +214,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 17: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -238,7 +222,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 18: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -247,7 +230,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 19: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
@@ -256,7 +238,6 @@ class device_handler(debounce_handler):
               print "Telnet Error, Check TiVo IP Address"
         if port == 20: #Antenna Channel
            try:
-              print "Telnet Error, Check TiVo IP Address"
               tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
               tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
               tn.close()
