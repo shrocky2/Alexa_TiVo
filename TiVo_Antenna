@@ -83,77 +83,94 @@ class device_handler(debounce_handler):
       TiVo_IP_Address = "192.168.0.47"
       print 'port:',  port,  "   state:", state
       if state == True: #If the ON command is given, it will run this code
-        if port < 10000: #Numbers Less Than 10000 are channels, numbers above 10000 are Services like Netflix
-                try:
-                        tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                        tn.write('SETCH '+str(port)+'\r')
-                        tn.close()
-                        print "Channel Changed to", port
-                except:
-                        print "Telnet Error, Check TiVo IP Address"
-                print " "
-        else:
-                if port == 10000: #TiVo Paused
-                        try:
-                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                         tn.write("IRCODE PAUSE\r")
-                         tn.close()
-                         print "TiVo Paused"
-                        except:
-                         print "Telnet Error, Check TiVo IP Address"
+        if port == 1: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 2: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 3: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 4: #Antenna Channel
+           try:
+              print "Telnet Error, Check TiVo IP Address"
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
+              tn.close()
+              print "Channel Changed to Antenna Channel"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+        if port == 10000: #TiVo Paused
+           try:
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write("IRCODE PAUSE\r")
+              tn.close()
+              print "TiVo Paused"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
 
                           
-                if port == 10001: #Netflix
-                        try:
-                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                         tn.write("IRCODE TIVO\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE RIGHT\r")
-                         time.sleep(1)
-                         tn.write("IRCODE SELECT\r")
-                         tn.close()
-                         print "TiVo App Netflix is Starting"
-                        except:
-                         print "Telnet Error, Check TiVo IP Address"
+        if port == 10001: #Netflix
+           try:
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write("IRCODE TIVO\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE RIGHT\r")
+              time.sleep(1)
+              tn.write("IRCODE SELECT\r")
+              tn.close()
+              print "TiVo App Netflix is Starting"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
 
-                if port == 10002: #Hulu
-                        print "Hulu Code Needed"
-                if port == 10003: #YouTube
-                        try:
-                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                         tn.write("IRCODE TIVO\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(1)
-                         tn.write("IRCODE RIGHT\r")
-                         time.sleep(1)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE DOWN\r")
-                         time.sleep(.4)
-                         tn.write("IRCODE SELECT\r")
-                         tn.close()
-                         print "TiVo App YouTube is Starting"
-                        except:
-                         print "Telnet Error, Check TiVo IP Address"
-                if port == 10004: #Antenna Channel
-                        try:
-                         print "Telnet Error, Check TiVo IP Address"
-                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
-                         tn.write('SETCH 10 1\r') #Enter Channel (10), the a space, then SubChannel (1)
-                         tn.close()
-                         print "Channel Changed to Antenna Channel"
-                        except:
-                         print "Telnet Error, Check TiVo IP Address"
-                print " "
+        if port == 10002: #Hulu
+              print "Hulu Code Needed"
+        if port == 10003: #YouTube
+           try:
+              tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
+              tn.write("IRCODE TIVO\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(1)
+              tn.write("IRCODE RIGHT\r")
+              time.sleep(1)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE DOWN\r")
+              time.sleep(.4)
+              tn.write("IRCODE SELECT\r")
+              tn.close()
+              print "TiVo App YouTube is Starting"
+           except:
+              print "Telnet Error, Check TiVo IP Address"
+           print " "
                
       else: #If the OFF command is given, it will run this code
         if port == 10001 or port == 10002 or port == 10003: #Netflix, Hulu, or YoutTube OFF command is given
