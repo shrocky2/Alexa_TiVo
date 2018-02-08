@@ -26,10 +26,10 @@ gpio_ports = {'TiVo Pause':10000,
               'Netflix':10001,
               'Hulu':10002,
               'YouTube':10003,
-              'A.B.C.':786,
-              'N.B.C.':782,
-              'C.B.S.':784,
-              'Fox':788,
+              'A.B.C.':6.1,
+              'N.B.C.':10.1,
+              'C.B.S.':3.1,
+              'Fox':47.1,
               'Comedy Central':754,
               'T.B.S.':767,
               'HGTV':762,
@@ -87,7 +87,6 @@ class device_handler(debounce_handler):
                 try:
                         tn = telnetlib.Telnet(TiVo_IP_Address, "31339")
                         tn.write('SETCH '+ str(port).replace("."," ") + '\r')
-                        tn.write('SETCH '+str(port)+'\r')
                         tn.close()
                         print "Channel Changed to", port
                 except:
